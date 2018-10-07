@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './../../../CollegeProject/src/Routes/appRouting.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +19,8 @@ import { SettingsComponent } from './settings/settings.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
