@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "entryModule": "app/server.module#AppServerModule",
     "baseUrl": "",
     "declaration": false,
     "emitDecoratorMetadata": true,
