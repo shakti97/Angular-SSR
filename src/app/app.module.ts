@@ -17,7 +17,7 @@ import { SettingsComponent } from './settings/settings.component';
     SettingsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'ssr' }),
     FormsModule,
     HttpModule,
     AppRoutingModule
