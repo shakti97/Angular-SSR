@@ -7,11 +7,19 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+      "server": {
+        "builder": "@angular-devkit/build-angular:server",
+        "options": {
+          "outputPath": "dist/server",
+          "main": "src/main.server.ts",
+          "tsConfig": "src/tsconfig.server.json"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.json",

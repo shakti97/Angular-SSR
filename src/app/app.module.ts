@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { SettingsComponent } from './settings/settings.component';
-import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 
 
 
@@ -29,11 +27,5 @@ import { isPlatformBrowser } from '@angular/common';
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
-    @Inject(APP_ID) private appId: string) {
-    const platform = isPlatformBrowser(platformId) ?
-      'in the browser' : 'on the server';
-    console.log(`Running ${platform} with appId=${appId}`);
-  }
+ 
 }
