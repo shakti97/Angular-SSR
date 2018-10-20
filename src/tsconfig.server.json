@@ -2,9 +2,9 @@
   "compilerOptions": {
     "entryModule": "app/server.module#AppServerModule",
     "baseUrl": "",
+    "experimentalDecorators": true,
     "declaration": false,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "lib": ["es6", "dom"],
     "mapRoot": "./",
     "module": "es6",
