@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject , Optional } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { APP_BASE_HREF, isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -9,11 +12,15 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
   posts: any;
   URL: string;
-  constructor(private http: HttpClient){
-      this.URL = `/api/posts`;
+  constructor(private http: HttpClient,
+    @Optional() @Inject(APP_BASE_HREF) origin :string,
+    @Inject(PLATFORM_ID) private platformId : Object){
+      this.URL = `${origin ? origin : '/api'}/posts`;
   }
 
   ngOnInit() {
+    const platform =isPlatformBrowser(this.platformId) ? 'in the browser' : 'on the server';
+    console.log('called home ' ,platform ,(new Date()).toString());
     this.http.get(this.URL)
       .subscribe(resp => {
         this.posts = resp;
